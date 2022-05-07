@@ -8,14 +8,28 @@
 <body>
     <h1>La Roue des Décisions</h1>
 
+    <!-- Page Content -->
     <form>
         <fieldset>
             <legend>Nouveau choix</legend>
+            <select name="icons"></select>
             <input type="text" name="textinput">
             <input type="submit" value="Ajouter à la liste">
         </fieldset>
     </form>
+
+    <!-- Script links -->
+    <script src="emojiManager.js"></script>
     <script src="formScript.js"></script>
     <script src="wheelScript.js"></script>
+
+    <script src="https://rawgit.com/theraot/emoji/master/emoji.js"></script>
+
+    <!-- Script -->
+    <script>
+        window.onload = function() {
+            iconsCreation();            
+        }
+    </script>
 </body>
 </html>
