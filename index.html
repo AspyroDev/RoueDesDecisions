@@ -14,9 +14,13 @@
             <legend>Nouveau choix</legend>
             <select name="icons"></select>
             <input type="text" name="textinput">
-            <input type="submit" value="Ajouter à la liste">
+            
         </fieldset>
     </form>
+    <a href="#">Ajouter à la liste</a>
+
+    <table>
+    </table>
 
     <!-- Script links -->
     <script src="emojiManager.js"></script>
@@ -28,7 +32,11 @@
     <!-- Script -->
     <script>
         window.onload = function() {
-            iconsCreation();            
+            iconsCreation();
+            
+            var form = document.getElementsByTagName("form");
+            var hyperlink = document.getElementsByTagName("a");
+            hyperlink[0].addEventListener("click", addToChoiceList);            
         }
     </script>
 </body>
