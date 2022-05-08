@@ -20,3 +20,8 @@ function addToChoiceList() {
     tableRow.appendChild(tableTextData);
     document.getElementsByTagName("table")[0].appendChild(tableRow);
 }
+
+function formSubmissionCancel(event) {
+    event.preventDefault();
+    addToChoiceList();
+}

@@ -32,11 +32,16 @@
     <!-- Script -->
     <script>
         window.onload = function() {
+            // Create emojis as options
             iconsCreation();
             
-            var form = document.getElementsByTagName("form");
+            // Add event listener on link
             var hyperlink = document.getElementsByTagName("a");
             hyperlink[0].addEventListener("click", addToChoiceList);            
+
+            // Add event listener on form
+            var form = document.getElementsByTagName("form");
+            form[0].addEventListener("submit", (e) => formSubmissionCancel(e));
         }
     </script>
 </body>
