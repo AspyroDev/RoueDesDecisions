@@ -9,19 +9,26 @@
     <h1>La Roue des Décisions</h1>
 
     <!-- Page Content -->
-    <form>
-        <fieldset>
-            <legend>Nouveau choix</legend>
-            <select name="icons"></select>
-            <input type="text" name="textinput">
-            
-        </fieldset>
-    </form>
-    <a href="#">Ajouter à la liste</a>
-
-    <table>
-    </table>
-
+    <div id="choicePicker">
+        <form>
+            <fieldset>
+                <legend>Nouveau choix</legend>
+                <select name="icons"></select>
+                <input type="text" name="textinput">
+                
+            </fieldset>
+        </form>
+        <a href="#">Ajouter à la liste</a>
+        <a href="#">Faire tourner la roue</a>
+    
+        <table>
+        </table>    
+    </div>
+    <div id="choiceWheel">
+        <span id="emojiSpan"></span>
+        <span id="choiceSpan"></span>
+    </div>
+    
     <!-- Script links -->
     <script src="emojiManager.js"></script>
     <script src="formScript.js"></script>
@@ -35,9 +42,10 @@
             // Create emojis as options
             iconsCreation();
             
-            // Add event listener on link
+            // Add event listener on links
             var hyperlink = document.getElementsByTagName("a");
-            hyperlink[0].addEventListener("click", addToChoiceList);            
+            hyperlink[0].addEventListener("click", addToChoiceList);
+            hyperlink[1].addEventListener("click", turnTheWheel);            
 
             // Add event listener on form
             var form = document.getElementsByTagName("form");

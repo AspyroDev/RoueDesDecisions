@@ -1,3 +1,5 @@
+const choiceList = [];
+
 function addToChoiceList() {
     // Get Emoji from Form
     var emojis = document.getElementsByTagName("select");
@@ -6,7 +8,8 @@ function addToChoiceList() {
     // Get Text from Form
     var inputBox = document.getElementsByTagName("input");
     var choice = inputBox[0].value;
-    
+    choiceList.push([picked, choice]);
+
     // Add Choice to Page Content
     var tableRow = document.createElement("tr");
 
