@@ -18,10 +18,10 @@
                 
             </fieldset>
         </form>
-        <a href="#">Ajouter à la liste</a>
-        <a href="#">Faire tourner la roue</a>
+        <a href="#" id="addToListLink">Ajouter à la liste</a>
+        <a href="#" id="turnWheelLink">Faire tourner la roue</a>
     
-        <table>
+        <table id="choiceView">
         </table>    
     </div>
     <div id="choiceWheel">
@@ -30,6 +30,9 @@
     </div>
     
     <!-- Script links -->
+    <script src="Choice.js"></script>
+    <script src="tableScript.js"></script>
+    <script src="choiceListScript.js"></script>
     <script src="emojiManager.js"></script>
     <script src="formScript.js"></script>
     <script src="wheelScript.js"></script>
@@ -43,9 +46,8 @@
             iconsCreation();
             
             // Add event listener on links
-            var hyperlink = document.getElementsByTagName("a");
-            hyperlink[0].addEventListener("click", addToChoiceList);
-            hyperlink[1].addEventListener("click", turnTheWheel);            
+            document.getElementById("addToListLink").addEventListener("click", addToChoiceList);
+            document.getElementById("turnWheelLink").addEventListener("click", turnTheWheel);            
 
             // Add event listener on form
             var form = document.getElementsByTagName("form");
