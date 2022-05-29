@@ -1,58 +1,68 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Roue des Décisions</title>
-</head>
-<body>
-    <h1>La Roue des Décisions</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>La Roue des Décisions</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
+            rel="stylesheet" 
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" 
+            crossorigin="anonymous">
+    </head>
+    <body>
+        <h1>La Roue des Décisions</h1>
 
-    <!-- Page Content -->
-    <div id="choicePicker">
-        <form>
-            <fieldset>
-                <legend>Nouveau choix</legend>
-                <select name="icons"></select>
-                <input type="text" name="textinput">
+        <!-- Page Content -->
+        <div id="choicePicker">
+            <form>
+                <fieldset>
+                    <legend>Nouveau choix</legend>
+                    <select name="icons"></select>
+                    <input type="text" name="textinput">
+                    
+                </fieldset>
+            </form>
+            <a href="#" id="addToListLink">Ajouter à la liste</a>
+            <a href="#" id="turnWheelLink">Faire tourner la roue</a>
+        
+            <table id="choiceView">
+            </table>    
+        </div>
+        <div id="choiceWheel">
+            <span id="emojiSpan"></span>
+            <span id="choiceSpan"></span>
+        </div>
+
+        <!-- External Scripts links -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" 
+            crossorigin="anonymous">
+        </script>
+
+        <script src="https://rawgit.com/theraot/emoji/master/emoji.js"></script>
+
+        <!-- Script links -->
+        <script src="Choice.js"></script>
+        <script src="tableScript.js"></script>
+        <script src="choiceListScript.js"></script>
+        <script src="emojiManager.js"></script>
+        <script src="formScript.js"></script>
+        <script src="wheelScript.js"></script>
+
+        <!-- Script -->
+        <script>
+            window.onload = function() {
+                // Create emojis as options
+                iconsCreation();
                 
-            </fieldset>
-        </form>
-        <a href="#" id="addToListLink">Ajouter à la liste</a>
-        <a href="#" id="turnWheelLink">Faire tourner la roue</a>
-    
-        <table id="choiceView">
-        </table>    
-    </div>
-    <div id="choiceWheel">
-        <span id="emojiSpan"></span>
-        <span id="choiceSpan"></span>
-    </div>
-    
-    <!-- Script links -->
-    <script src="Choice.js"></script>
-    <script src="tableScript.js"></script>
-    <script src="choiceListScript.js"></script>
-    <script src="emojiManager.js"></script>
-    <script src="formScript.js"></script>
-    <script src="wheelScript.js"></script>
+                // Add event listener on links
+                document.getElementById("addToListLink").addEventListener("click", addToChoiceList);
+                document.getElementById("turnWheelLink").addEventListener("click", turnTheWheel);            
 
-    <script src="https://rawgit.com/theraot/emoji/master/emoji.js"></script>
-
-    <!-- Script -->
-    <script>
-        window.onload = function() {
-            // Create emojis as options
-            iconsCreation();
-            
-            // Add event listener on links
-            document.getElementById("addToListLink").addEventListener("click", addToChoiceList);
-            document.getElementById("turnWheelLink").addEventListener("click", turnTheWheel);            
-
-            // Add event listener on form
-            var form = document.getElementsByTagName("form");
-            form[0].addEventListener("submit", (e) => formSubmissionCancel(e));
-        }
-    </script>
-</body>
+                // Add event listener on form
+                var form = document.getElementsByTagName("form");
+                form[0].addEventListener("submit", (e) => formSubmissionCancel(e));
+            }
+        </script>
+    </body>
 </html>
