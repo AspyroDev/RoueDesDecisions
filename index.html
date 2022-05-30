@@ -24,8 +24,8 @@
                     
                 </fieldset>
             </form>
-            <a href="#" id="addToListLink">Ajouter à la liste</a>
-            <a href="#" id="turnWheelLink">Faire tourner la roue</a>
+            <button type="button" id="addToListButton" class="btn btn-primary">Ajouter à la liste</button>
+            <button type="button" id="turnWheelButton" class="btn btn-primary">Faire tourner la roue</button>
         
             <table id="choiceView">
             </table>    
@@ -59,8 +59,8 @@
                 iconsCreation();
                 
                 // Add event listener on links
-                document.getElementById("addToListLink").addEventListener("click", addToChoiceList);
-                document.getElementById("turnWheelLink").addEventListener("click", turnTheWheel);            
+                document.getElementById("addToListButton").addEventListener("click", addToChoiceList);
+                document.getElementById("turnWheelButton").addEventListener("click", turnTheWheel);            
 
                 // Add event listener on form
                 var form = document.getElementsByTagName("form");

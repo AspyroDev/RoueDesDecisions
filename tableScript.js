@@ -11,8 +11,8 @@ function updateTable() {
         var tableTextData = document.createElement("td");
         var tableDeleteData = document.createElement("td");
         
-        var deleteLink = createDeleteLink();
-        tableDeleteData.append(deleteLink);
+        var deleteButton = createDeleteButton();
+        tableDeleteData.append(deleteButton);
 
         tableEmojiData.innerHTML = element.emoji;
         tableTextData.innerHTML = element.choice;
@@ -25,16 +25,16 @@ function updateTable() {
     }
 }
 
-function createDeleteLink() {
-    var deleteLink = document.createElement("a");
-    deleteLink.setAttribute("href", "#");
-    deleteLink.setAttribute("class", "deleteLink");
-    deleteLink.innerText = "Supprimer choix";
-    deleteLink.addEventListener("click", deleteLinkClicked);
-    return deleteLink;
+function createDeleteButton() {
+    var deleteButton = document.createElement("button");
+    deleteButton.setAttribute("type", "button");
+    deleteButton.setAttribute("class", "deleteButton btn btn-secondary")
+    deleteButton.innerText = "Supprimer choix";
+    deleteButton.addEventListener("click", deleteButtonClicked);
+    return deleteButton;
 }
 
-function deleteLinkClicked() {
+function deleteButtonClicked() {
     
     var tableRow = this.parentNode.parentNode;
     var emoji = tableRow.children[0].innerText;
